@@ -109,13 +109,13 @@ signal Analog_Data_Array_i                   : std_logic_vector(767 downto 0);
     
 Data_Ready  <= Data_Ready_i;
 Chip_Select <= Chip_Select_i;
-Analog_Data <= Analog_Data_Array_i;
+--Analog_Data <= Analog_Data_Array_i;
 -- SPI driver read all 8 channel automatically
    SPI_Driver: process (CLK_I, RST_I)
       variable Channel_cnt    : integer range 0 to 8;
       variable wait_cnt       : integer range 0 to 60;
       variable addr_cnt       : integer range 0 to 50;
-      variable Cycle_cnt      : integer range 0 to 50;
+      variable Cycle_cnt      : integer range 0 to 100;
       variable data_valid_cnt : integer range 0 to 100;
     begin
       if RST_I = '0' then 
@@ -165,8 +165,9 @@ Analog_Data <= Analog_Data_Array_i;
             when Idle =>
                Data_Ready_i   <= '0';
                Chip_Select_i  <= x"0";
+               Address_out    <= CH0; 
                addr_cnt       := 0;
-               Cycle_cnt      := 0;
+               Cycle_cnt      := 1;
                if Ana_In_Request = '1' then  -- Chip_Select_Array  
                  SPI_Drive_state    <= Convertion_Dummy_1;
                else
@@ -206,7 +207,7 @@ Analog_Data <= Analog_Data_Array_i;
                end if; 
 
                if data_valid_latch = '1' then
-                  if data_valid_cnt = 50 then 
+                  if data_valid_cnt = 60 then 
                      data_valid_cnt    := 0;
                      data_ok           <= '1';
                      SPI_Drive_State   <= Data_Wait_State;
@@ -225,7 +226,7 @@ Analog_Data <= Analog_Data_Array_i;
                         --15+(3 * (15 + 1)) downto 0+(3 * (15 + 1)) = 63 downto 48
                         --15+(4 * (15 + 1)) downto 0+(4 * (15 + 1)) = 79 downto 64
 
-                        Analog_Data_Array_i((15+(Cycle_cnt * 16)) downto (0+(Cycle_cnt * 16)))   <= AD_data_in; 
+                        Analog_Data_Array_i((15+((Cycle_cnt-1) * 16)) downto (0+((Cycle_cnt-1) * 16)))   <= AD_data_in; 
 
                         if Cycle_cnt < 8 then
                            Chip_Select_i  <= x"1";
@@ -292,11 +293,12 @@ Analog_Data <= Analog_Data_Array_i;
             elsif Cycle_cnt > 32 and Cycle_cnt < 41 then
                 --addr_cnt          := addr_cnt + 1;
                SPI_Drive_State   <= Convertion_Dummy_1;
-            elsif Cycle_cnt > 40 and Cycle_cnt < 48 then
+            elsif Cycle_cnt > 40 and Cycle_cnt < 49 then
                 --addr_cnt          := addr_cnt + 1;
                SPI_Drive_State   <= Convertion_Dummy_1;
-            elsif Cycle_cnt = 48 then
+            elsif Cycle_cnt = 49 then
                SPI_Drive_State   <= Idle;
+               Analog_Data       <= Analog_Data_Array_i;
                Data_Ready_i      <= '1';
                Cycle_cnt         := 0;
             end if;

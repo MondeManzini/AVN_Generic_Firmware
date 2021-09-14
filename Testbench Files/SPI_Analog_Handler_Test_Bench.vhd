@@ -137,12 +137,57 @@ signal Chip_Select_i                          : std_logic_vector(3 downto 0);
       );
   end component SPI_Analog_Handler;
 
+----------------------------------------------------------------------
+-- Mux Signals and Component
+----------------------------------------------------------------------
+signal UART_TXD_i           : std_logic;  
+signal Analog_Input_valid_i : std_logic;
+
+  component Analog_Input_Test_Code_Mux is
+    port (
+      CLK_I                      : in  std_logic;
+      RST_I                      : in  std_logic;
+      UART_TXD                   : out std_logic;          
+      Analog_Data                : in std_logic_vector(767 downto 0);
+      Ana_In_Request             : out std_logic;
+      Analog_Input_Valid         : in std_logic;
+      Baud_Rate_Enable           : in  std_logic
+      );
+  end component Analog_Input_Test_Code_Mux;     
+  
+----------------------------------------------------------------------
+-- Baud Rate for Mux Signals and Component
+----------------------------------------------------------------------
+signal baud_rate_i                            : integer range 0 to 7;
+signal Baud_Rate_Enable_i                     : std_logic;  
+signal Version_Baud_1_i                       : std_logic_vector(7 downto 0);
+signal Version_Baud_2_i                       : std_logic_vector(7 downto 0);
+signal Baud_Rate_Generator_Version_Name_1_i   : std_logic_vector(255 downto 0); 
+signal Baud_Rate_Generator_Version_Number_1_i : std_logic_vector(63 downto 0); 
+signal Baud_Rate_Generator_Version_Ready_1_i  : std_logic; 
+signal Baud_Rate_Generator_Version_Name_2_i   : std_logic_vector(255 downto 0); 
+signal Baud_Rate_Generator_Version_Number_2_i : std_logic_vector(63 downto 0); 
+signal Baud_Rate_Generator_Version_Ready_2_i  : std_logic; 
+signal Baud_Rate_Generator_Version_Request_i  : std_logic;  
+
+component Baud_Rate_Generator is
+  port (
+    Clk                                 : in  std_logic;
+    RST_I                               : in  std_logic;
+    baud_rate                           : in  integer range 0 to 7;
+    Baud_Rate_Enable                    : out std_logic;
+    Module_Number                       : in  std_logic_vector(7 downto 0);
+    Baud_Rate_Generator_Version_Request : in  std_logic; 
+    Baud_Rate_Generator_Version_Name    : out std_logic_vector(255 downto 0);
+    Baud_Rate_Generator_Version_Number  : out std_logic_vector(63 downto 0);
+    Baud_Rate_Generator_Version_Ready   : out std_logic   
+    );
+end component Baud_Rate_Generator;
 -------------------------------------------------------------------------------
 -- New Code Signal and Components
 ------------------------------------------------------------------------------- 
 signal RST_I_i                  : std_logic;
 signal CLK_I_i                  : std_logic;
-
 signal Request_i                : std_logic;
 
 ---------------------------------------
@@ -180,7 +225,6 @@ begin
        );             
 
 -- SPI Analog Handler Instance
--- Analog In Handler 1
 SPI_Analog_Handler_1: entity work.SPI_Analog_Handler
 port map (
   RST_I                               => RST_I_i,
@@ -191,7 +235,7 @@ port map (
   AD_data_in                          => AD_data_1_i,
   Data_valid                          => Data_valid_1_i,
   Analog_Data                         => Analog_Data_i, 
-  Data_Ready                          => Analog_Input_Valid_1_i,
+  Data_Ready                          => Analog_Input_Valid_i,
   Ana_In_Request                      => Ana_In_Request_i,
   Module_Number                       => Module_Number_i,
   SPI_Analog_Handler_Version_Request  => SPI_Analog_Handler_Version_Request_i,
@@ -227,7 +271,33 @@ port map (
       SPI_Analog_Driver_Version_Number  => SPI_Analog_Driver_Version_Number_i,
       SPI_Analog_Driver_Version_Ready   => SPI_Analog_Driver_Version_Ready_i 
        );
-              
+
+  -- SPI Analog Mux Instance
+  Analog_Input_Test_Code_Mux_1: entity work.Analog_Input_Test_Code_Mux
+  port map (
+    RST_I               => RST_I_i,
+    CLK_I               => CLK_I_i,
+    UART_TXD            => UART_TXD_i,
+    Analog_Data         => Analog_Data_i,
+    Analog_Input_Valid  => Analog_Input_Valid_i,
+    Ana_In_Request      => Ana_In_Request_i, 
+    Baud_Rate_Enable    => Baud_Rate_Enable_i
+    );
+
+  -- Baud Rate Generator Instance
+  Analog_Input_Test_Code_Baud_1: entity work.Baud_Rate_Generator
+  port map (
+    Clk                                 => CLK_I_i,
+    RST_I                               => RST_I_i,
+    baud_rate                           => 5,
+    Baud_Rate_Enable                    => Baud_Rate_Enable_i,
+    Module_Number                       => Module_Number_i,
+    Baud_Rate_Generator_Version_Request => Baud_Rate_Generator_Version_Request_i,
+    Baud_Rate_Generator_Version_Name    => Baud_Rate_Generator_Version_Name_1_i,
+    Baud_Rate_Generator_Version_Number  => Baud_Rate_Generator_Version_Number_1_i,
+    Baud_Rate_Generator_Version_Ready   => Baud_Rate_Generator_Version_Ready_1_i  
+    );
+
 Miso_i    <= -- Card 1 Port 1 to 8 
               '0', '1'  after 1.00425 ms, '0' after 1.00629 ms, '1' after 1.00829 ms,
               '0'       after 1.01033 ms, '1' after 1.01233 ms, '1' after 1.01247 ms, '1' after 1.01637 ms,
@@ -250,15 +320,15 @@ Time_Stamping: process (CLK_I_i, RST_I_i)
 
     if RST_I_i = '0' then
        mS_Cnt           := 0;
-       Ana_In_Request_i <= '0';
+     --  Ana_In_Request_i <= '0';
        Test_state       <= Idle;
     elsif CLK_I_i'event and CLK_I_i='1' then
        
-       if OnemS_sStrobe = '1' then
-          Ana_In_Request_i <= '1';
-       else
-          Ana_In_Request_i <= '0';
-       end if;     
+       --if OnemS_sStrobe = '1' then
+        --  Ana_In_Request_i <= '1';
+       --else
+       --   Ana_In_Request_i <= '0';
+       --end if;     
 
     end if;
   end process Time_Stamping;

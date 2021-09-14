@@ -48,13 +48,11 @@ entity Analog_Input_Test_Code_Mux is
    -- Analog InS        
    -- Analog In 1        
    Analog_Data                : in std_logic_vector(767 downto 0);
+   Analog_Input_Valid         : in std_logic;
     
-   Analog_Input_Valid         : in  std_logic;
-   
 -- Requests
    Ana_In_Request             : out std_logic;
-   Baud_Rate_Enable           : in  std_logic;  
-   Data_Ready                 : in  std_logic
+   Baud_Rate_Enable           : in  std_logic 
    );
 
 end Analog_Input_Test_Code_Mux;
@@ -119,16 +117,16 @@ signal All_Modules_Trig           : std_logic;
 signal Send_100mS_Data            : std_logic;
 signal Send_All_Modules           : std_logic;
 signal All_Data_Ready             : std_logic;
-signal Request_Data_Strobe        : std_logic;
-signal Send_Data_Strobe           : std_logic;
-signal Analog_Trig               : std_logic;
-signal RTC_Build_Trig_Done_i     : std_logic;     
-signal Analog_Build_Trig_i       : std_logic;  
-signal Analog_Build_Trig_Done_i  : std_logic;  
-signal Analog_Input_Load         : std_logic;
+signal Request_Data_Strobe             : std_logic;
+signal Send_Data_Strobe                : std_logic;
+signal Analog_Trig                     : std_logic;
+signal RTC_Build_Trig_Done_i           : std_logic;     
+signal Analog_Input_Build_Trig_i       : std_logic;  
+signal Analog_Input_Build_Trig_Done_i  : std_logic;  
+signal Analog_Input_Load               : std_logic;
 
-signal no_of_chars2snd            : std_logic_vector(7 downto 0) := X"00";
-signal mode_i                     : std_logic_vector(7 downto 0) := X"00";
+signal no_of_chars2snd                 : std_logic_vector(7 downto 0) := X"00";
+signal mode_i                          : std_logic_vector(7 downto 0) := X"00";
 
 type Time_Array is array (0 to 255) of std_logic_vector(7 downto 0);
 signal Time_Data_Array        : Time_Array;
@@ -171,6 +169,7 @@ begin
       Preamble_Data_Array(2)     <= x"7e";
       data2send                  <= (others => (others => '0'));
       CRC2send                   <= (others => (others => '0'));
+      Analog_In_Data_Array       <= (others => (others => '0'));
       no_of_chars2send           <= 0;
       send_msg                   <= '0';
       Message_done               <= '0';
@@ -179,9 +178,9 @@ begin
       Ana_In_Request_i           <= '0';
       Analog_Input_Ready         <= '0';
       Analog_Trig                <= '0';
-      Analog_Build_Trig_i        <= '0';
-      Analog_Build_Trig_Done_i   <= '0';
-      Lockout                    <= '0';
+      Analog_Input_Build_Trig_i        <= '0';
+      Analog_Input_Build_Trig_Done_i   <= '0';
+      Lockout                          <= '0';
       Send_Operation             <= '0';
       Request_Data_cnt           := 0;
       send_data_cnt              := 0;
@@ -199,12 +198,12 @@ begin
             -- Modules Request Generator    
                   --100mS
             -----------------------------
-            
-            if Request_Data_cnt = 650_000 then  -- 100 ms Retrieve 0 for 5000_000
+            Ana_In_Request_i                 <= '0';
+            if Request_Data_cnt = 6500 then  -- 100 ms Retrieve 0 for 5000_000
                Send_Data_Strobe     <= '1';                  
                Request_Data_cnt     := 0;
                Request_Send_State   <= Data_RX;
-            elsif Request_Data_cnt = 640_000 then -- 90 ms Retrieve 0 for 4900_000
+            elsif Request_Data_cnt = 6400 then -- 90 ms Retrieve 0 for 4900_000
                Request_Data_Strobe  <= '1';
                Request_Data_cnt     := Request_Data_cnt + 1;
                Request_Send_State   <= Requests_TX;
@@ -215,9 +214,11 @@ begin
             end if; 
 
          when Requests_TX =>
-            Ana_In_Request_i     <= '1';
             Request_Data_Strobe  <= '0';
-            Request_Send_State   <= Request_Idle;
+            if Busy = '0' then
+               Ana_In_Request_i     <= '1';
+               Request_Send_State   <= Request_Idle;
+            end if;
             -----------------------------      
             -- End of Modules Request Generator    
             -----------------------------
@@ -239,33 +240,37 @@ begin
             end if;  
 
             if Analog_Input_Load = '1' then
-               if analog_data_load = 50 then
+               if analog_data_load = 100 then
                   analog_data_load     := 0;
                   Analog_Input_Ready   <= '1';        -- Latch AI
+                  Request_Send_State   <= Request_Idle;
                else
                   analog_data_load := analog_data_load + 1;
                   for i in 0 to 49 loop
                      if i = 0 then
-                        Analog_In_Data_Array(0) <= Analog_Card_1;
+                        Analog_In_Data_Array(i) <= Analog_Card_1;
                      elsif i > 0 then
-                        --Analog_In_Data_Array(i) <= Analog_Data((15+(i * 16)) downto (0+(i * 16)));
-                        Analog_In_Data_Array(i) <= Analog_Data(i-1); 
-                        Analog_In_Data_Array(i) <= nalog_Data((15+(i * 8)) downto (0+(i * 8))); 
+                        -- Analog_In_Data_Array(i) <= Analog_Data((15+(i * 16)) downto (0+(i * 16)));
+                        -- Analog_In_Data_Array(i) <= Analog_Data(i-1); 
+                        -- Analog_In_Data_Array(i) <= Analog_Data((7+((i-1) * 8)) downto (0+((i-1) * 8)));
+                        -- Analog_In_Data_Array(i) <= Analog_Data(767-((i-1) * (7 + (i-1))) downto 760-((i-1) * (7 + (i-1))));
+                        Analog_In_Data_Array(i) <= Analog_Data(767-((i-1) * 8) downto 760-((i-1) * 8));
                      end if;  
                   end loop;
                end if;
             end if;
-  
-   end case;
+      end case;
    -- Timestamp and Stacking
-         if Analog_Input_Ready = '1' then              
-            Analog_Input_Build_Trig_i         <= '1';
+
+         if Analog_Input_Ready = '1' then       
+            Analog_Input_Load          <= '0';
+            Analog_Input_Build_Trig_i  <= '1';
          end if; 
 
          if Analog_Input_Build_Trig_i = '1' then
+            Analog_Input_Ready         <= '0';       
             if wait_cnt_all = 100 then
-               wait_cnt_all               := 0;
-               Analog_Input_Build_Trig_i     <= '0';
+               wait_cnt_all                   := 0;
                Analog_Input_Build_Trig_Done_i <= '1';
             else
                wait_cnt_all      := wait_cnt_all + 1;
@@ -283,7 +288,7 @@ begin
                   elsif (i = 4) then
                      data2send(i)   <= mode_i;
                      CRC2send(i)    <= mode_i;
-                  elsif (i > 4) and (i < 15) then
+                  elsif (i > 4) then
                      -- Analog Input Message
                      data2send(i)   <= Analog_In_Data_Array(i-5);
                      CRC2send(i)    <= Analog_In_Data_Array(i-5);
@@ -292,8 +297,9 @@ begin
             end if;
          end if;   
 
-         if Analog_Build_Trig_Done_i = '1' then
-            Analog_Build_Trig_Done_i <= '0';
+         if Analog_Input_Build_Trig_Done_i = '1' then
+            Analog_Input_Build_Trig_Done_i   <= '0';
+            Analog_Input_Build_Trig_i        <= '0';
             if (Busy = '1') then
                Stack_100mS_Data           <= '1';
                Send_100mS_Data            <= '0';
