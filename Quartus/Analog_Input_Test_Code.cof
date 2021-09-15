@@ -2,7 +2,7 @@
 <cof>
 	<eprom_name>EPCS16</eprom_name>
 	<flash_loader_device>EP4CE22</flash_loader_device>
-	<output_filename>A1000_0137_FPGA_Controller_Test_Code.jic</output_filename>
+	<output_filename>Analog_Input_Test_Code.jic</output_filename>
 	<n_pages>1</n_pages>
 	<width>1</width>
 	<mode>7</mode>
@@ -10,7 +10,7 @@
 		<user_name>Page_0</user_name>
 		<page_flags>1</page_flags>
 		<bit0>
-			<sof_filename>./output_files/A1000_0137_FPGA_Controller_Test_Code.sof</sof_filename> 
+			<sof_filename>./output_files/Analog_Input_Test_Code.sof</sof_filename> 
 		</bit0>
 	</sof_data>
 	<version>10</version>
