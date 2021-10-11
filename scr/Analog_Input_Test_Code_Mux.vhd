@@ -246,15 +246,24 @@ begin
                   Request_Send_State   <= Request_Idle;
                else
                   analog_data_load := analog_data_load + 1;
-                  for i in 0 to 49 loop
+                  for i in 0 to 95 loop
                      if i = 0 then
-                        Analog_In_Data_Array(i) <= Analog_Card_1;
+                        Analog_In_Data_Array(0) <= Analog_Card_1;
                      elsif i > 0 then
-                        -- Analog_In_Data_Array(i) <= Analog_Data((15+(i * 16)) downto (0+(i * 16)));
-                        -- Analog_In_Data_Array(i) <= Analog_Data(i-1); 
-                        -- Analog_In_Data_Array(i) <= Analog_Data((7+((i-1) * 8)) downto (0+((i-1) * 8)));
-                        -- Analog_In_Data_Array(i) <= Analog_Data(767-((i-1) * (7 + (i-1))) downto 760-((i-1) * (7 + (i-1))));
-                        Analog_In_Data_Array(i) <= Analog_Data(767-((i-1) * 8) downto 760-((i-1) * 8));
+                        --Analog_In_Data_Array(i) <= Analog_Data((15+(i * 16)) downto (0+(i * 16)));
+                        Analog_In_Data_Array(i-1) <= Analog_Data((7+((i-1) * 8)) downto (0+((i-1) * 8))); 
+                        --Analog_In_Data_Array(24-1) <= Analog_Data((7+((24-1) * 8)) downto (0+((24-1) * 8)));
+                        --Analog_In_Data_Array(24-1) <= Analog_Data((191 downto 184);  
+                        --Analog_In_Data_Array(25-1) <= Analog_Data((7+((25-1) * 8)) downto (0+((25-1) * 8)));
+                        --Analog_In_Data_Array(25-1) <= Analog_Data((199 downto 192);  
+                        --Analog_In_Data_Array(26-1) <= Analog_Data((7+((26-1) * 8)) downto (0+((26-1) * 8)));
+                        --Analog_In_Data_Array(26-1) <= Analog_Data((207 downto 200);  
+
+                        --Analog_In_Data_Array(49-1) <= Analog_Data((7+((49-1) * 8)) downto (0+((49-1) * 8)));
+                        --Analog_In_Data_Array(49-1) <= Analog_Data((391 downto 384);  
+
+                        --Analog_In_Data_Array(96-1) <= Analog_Data((7+((96-1) * 8)) downto (0+((96-1) * 8)));
+                        --Analog_In_Data_Array(96-1) <= Analog_Data((207 downto 200);  
                      end if;  
                   end loop;
                end if;
