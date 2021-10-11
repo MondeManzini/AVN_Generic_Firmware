@@ -189,7 +189,7 @@ begin
       Send_Data_Strobe           <= '0';
       Send_All_Modules           <= '0';  
       request_send_state         <= Request_Idle;
-      report "The version number of Main_Mux is 00.01.06." severity note;  
+      report "The version number of Analog_Input_Test_Code_Mux is 00.01.06." severity note;  
    elsif CLK_I'event and CLK_I = '1' then
 
       case Request_Send_State is
@@ -199,11 +199,11 @@ begin
                   --100mS
             -----------------------------
             Ana_In_Request_i                 <= '0';
-            if Request_Data_cnt = 6500 then  -- 100 ms Retrieve 0 for 5000_000
+            if Request_Data_cnt = 500000 then  -- 100 ms Retrieve 0 for 5000_000
                Send_Data_Strobe     <= '1';                  
                Request_Data_cnt     := 0;
                Request_Send_State   <= Data_RX;
-            elsif Request_Data_cnt = 6400 then -- 90 ms Retrieve 0 for 4900_000
+            elsif Request_Data_cnt = 490000 then -- 90 ms Retrieve 0 for 4900_000
                Request_Data_Strobe  <= '1';
                Request_Data_cnt     := Request_Data_cnt + 1;
                Request_Send_State   <= Requests_TX;

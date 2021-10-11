@@ -111,6 +111,8 @@ signal MISO_3_i                         : std_logic;
 signal SCKL_1_3_i                       : std_logic;
 signal CS_1_3_i                         : std_logic;
 signal CS_2_3_i                         : std_logic;
+signal CS_3_3_i                         : std_logic;
+signal CS_4_3_i                         : std_logic;
 signal MOSI_3_i                         : std_logic;
 
 -- SPI Channel 4  
@@ -434,18 +436,23 @@ CLK_I_i             <= CLOCK_50;
               
 -- SPI 3 Analog Input
        
--- Signal MApped in Accordance with Version 2 PCB
+-- OUTS__________        
+GPIO_1(0)           <= Controller_to_Software_UART_TXD_i;
        
--- INS_________3		 
-MISO_3_i            <= GPIO_0(13);
+       -- SPI 3 Analog Input
+       
+--    Version 1
+       
+       -- INS_________3		 
+MISO_3_i            <= GPIO_0(1);
        
 -- OUTS________3
-GPIO_0(16)          <= SCKL_1_3_i;
-GPIO_0(18)          <= CS_1_3_i;
-GPIO_0(15)          <= INT_2_3_i;        --CS_2_3_i;
-GPIO_0(33)          <= MOSI_3_i;       
-GPIO_0(17)          <= INT_1_3_i;       -- CS3 -- correct
-GPIO_0(14)          <= CS_2_3_i;        -- CS4  INT_2_3_i
+GPIO_0(0)           <= CS_1_3_i;
+GPIO_0(3)           <= MOSI_3_i;  
+GPIO_0(5)           <= SCKL_1_3_i;  
+GPIO_0(7)           <= CS_4_3_i;   
+GPIO_0(2)           <= CS_2_3_i;       
+GPIO_0(4)           <= CS_3_3_i;    
 
        
 -- INS___________
@@ -476,8 +483,8 @@ port map (
   convert                           => convert_i,
   nCS_1                             => CS_1_3_i,
   nCS_2                             => CS_2_3_i,
-  nCS_3                             => INT_1_3_i,
-  nCS_4                             => INT_2_3_i,
+  nCS_3                             => CS_3_3_i,
+  nCS_4                             => CS_4_3_i,
   Sclk                              => SCKL_1_3_i,  
   Mosi                              => MOSI_3_i,
   Miso                              => MISO_3_i,
