@@ -284,10 +284,10 @@ begin
             else
                wait_cnt_all      := wait_cnt_all + 1;
                -- Build Message
-               no_of_chars2send  <= 52;
+               no_of_chars2send  <= 104;
                no_of_chars2snd   <= std_logic_vector(to_unsigned(no_of_chars2send, no_of_chars2snd'length));
                mode_i            <= x"80";
-               for i in 0 to 52 loop
+               for i in 0 to 104 loop
                   if i < 3 THEN
                      data2send(i)   <= Preamble_Data_Array(i);
                      CRC2send(i)    <= Preamble_Data_Array(i);

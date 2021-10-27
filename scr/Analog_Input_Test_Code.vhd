@@ -587,7 +587,7 @@ port map (
             LED(0)               <= '1';
          end if;
 
-         if Ana_In_Request_cnt = 5000000 THEN
+         if Ana_In_Request_cnt = 5000_000 THEN
             Ana_In_Request_cnt   := 0;
             LED(0)               <= '0';
          else
