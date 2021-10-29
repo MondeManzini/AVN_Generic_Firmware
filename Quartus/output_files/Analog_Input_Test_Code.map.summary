@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed Oct 27 13:58:57 2021
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Revision Name : Analog_Input_Test_Code
+Top-level Entity Name : Analog_Input_Test_Code
+Family : Cyclone IV E
+Total logic elements : 4,251
+    Total combinational functions : 1,928
+    Dedicated logic registers : 3,357
+Total registers : 3357
+Total pins : 104
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

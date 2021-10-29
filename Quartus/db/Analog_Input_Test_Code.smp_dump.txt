@@ -1,0 +1,37 @@
+
+State Machine - |Analog_Input_Test_Code|Analog_Input_Test_Code_Mux:Analog_Input_Test_Code_Mux_1|tx_state
+Name tx_state.send_stop tx_state.CRC_ready tx_state.send_data tx_state.send_start tx_state.sync tx_state.idle 
+tx_state.idle 0 0 0 0 0 0 
+tx_state.sync 0 0 0 0 1 1 
+tx_state.send_start 0 0 0 1 0 1 
+tx_state.send_data 0 0 1 0 0 1 
+tx_state.CRC_ready 0 1 0 0 0 1 
+tx_state.send_stop 1 0 0 0 0 1 
+
+State Machine - |Analog_Input_Test_Code|Analog_Input_Test_Code_Mux:Analog_Input_Test_Code_Mux_1|request_send_state
+Name request_send_state.Collect_Data request_send_state.Data_RX request_send_state.Requests_TX request_send_state.Request_Idle 
+request_send_state.Request_Idle 0 0 0 0 
+request_send_state.Requests_TX 0 0 1 1 
+request_send_state.Data_RX 0 1 0 1 
+request_send_state.Collect_Data 1 0 0 1 
+
+State Machine - |Analog_Input_Test_Code|SPI_Analog_Handler:SPI_Analog_Handler_1|SPI_Drive_state
+Name SPI_Drive_state.Iterate_State SPI_Drive_state.Next_Channel_State SPI_Drive_state.Data_Wait_State SPI_Drive_state.Wait_Dummy_1 SPI_Drive_state.Convertion_Dummy_1 SPI_Drive_state.Idle 
+SPI_Drive_state.Idle 0 0 0 0 0 0 
+SPI_Drive_state.Convertion_Dummy_1 0 0 0 0 1 1 
+SPI_Drive_state.Wait_Dummy_1 0 0 0 1 0 1 
+SPI_Drive_state.Data_Wait_State 0 0 1 0 0 1 
+SPI_Drive_state.Next_Channel_State 0 1 0 0 0 1 
+SPI_Drive_state.Iterate_State 1 0 0 0 0 1 
+
+State Machine - |Analog_Input_Test_Code|SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_Drive_state
+Name SPI_Drive_state.Wait_Bit_Rate_2 SPI_Drive_state.Wait_Bit_Rate_1 SPI_Drive_state.wait_1 SPI_Drive_state.Cycle_cnt SPI_Drive_state.RE_1 SPI_Drive_state.FE_1 SPI_Drive_state.CS_on SPI_Drive_state.Convertion_Start SPI_Drive_state.idle 
+SPI_Drive_state.idle 0 0 0 0 0 0 0 0 0 
+SPI_Drive_state.Convertion_Start 0 0 0 0 0 0 0 1 1 
+SPI_Drive_state.CS_on 0 0 0 0 0 0 1 0 1 
+SPI_Drive_state.FE_1 0 0 0 0 0 1 0 0 1 
+SPI_Drive_state.RE_1 0 0 0 0 1 0 0 0 1 
+SPI_Drive_state.Cycle_cnt 0 0 0 1 0 0 0 0 1 
+SPI_Drive_state.wait_1 0 0 1 0 0 0 0 0 1 
+SPI_Drive_state.Wait_Bit_Rate_1 0 1 0 0 0 0 0 0 1 
+SPI_Drive_state.Wait_Bit_Rate_2 1 0 0 0 0 0 0 0 1 
