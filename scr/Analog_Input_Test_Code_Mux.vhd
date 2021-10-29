@@ -287,7 +287,7 @@ begin
                no_of_chars2send  <= 104;
                no_of_chars2snd   <= std_logic_vector(to_unsigned(no_of_chars2send, no_of_chars2snd'length));
                mode_i            <= x"80";
-               for i in 0 to 104 loop
+               for i in 0 to 103 loop
                   if i < 3 THEN
                      data2send(i)   <= Preamble_Data_Array(i);
                      CRC2send(i)    <= Preamble_Data_Array(i);
