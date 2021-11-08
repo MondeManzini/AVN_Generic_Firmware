@@ -236,7 +236,8 @@ begin
       -- Analog Input Data Validity Generator
             
             if Analog_Input_Valid = '1' and Analog_Trig = '1' then
-               Analog_Input_Load <= '1';        -- Latch AI
+               Analog_Input_Load <= '1';  
+               no_of_chars2send  <= 103;      -- Latch AI no of chars
             end if;  
 
             if Analog_Input_Load = '1' then
@@ -284,10 +285,9 @@ begin
             else
                wait_cnt_all      := wait_cnt_all + 1;
                -- Build Message
-               no_of_chars2send  <= 104;
                no_of_chars2snd   <= std_logic_vector(to_unsigned(no_of_chars2send, no_of_chars2snd'length));
                mode_i            <= x"80";
-               for i in 0 to 103 loop
+               for i in 0 to no_of_chars2send loop
                   if i < 3 THEN
                      data2send(i)   <= Preamble_Data_Array(i);
                      CRC2send(i)    <= Preamble_Data_Array(i);
