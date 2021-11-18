@@ -67,6 +67,8 @@ architecture Arch_DUT of Analog_Input_Test_Code_Mux is
   constant Analog_Card_1    : std_logic_vector(7 downto 0) := X"30";
   constant Analog_Card_2    : std_logic_vector(7 downto 0) := X"31";
 
+  constant no_of_chars2send   : integer range 0 to 255   :=  103;
+
 type tx_states 	is (idle, sync, send_start, send_data, CRC_ready, send_stop);
 type tx_data_array is array (0 to 255) of std_logic_vector(7 downto 0);
 type request_send_states is (Request_Idle, Requests_TX, Data_RX, Collect_Data);
@@ -80,7 +82,7 @@ signal request_send_state         : request_send_states;
 signal enable_div20               : std_logic;
 signal sample_clock2              : std_logic;
 signal no_of_chars                : integer range 0 to 255;  
-signal no_of_chars2send           : integer range 0 to 255;
+--signal no_of_chars2send           : integer range 0 to 255;
 signal baud_rate_reload           : integer range 0 to 6000;
 signal busy                       : std_logic;
 signal comms_done                 : std_logic;
@@ -170,7 +172,7 @@ begin
       data2send                  <= (others => (others => '0'));
       CRC2send                   <= (others => (others => '0'));
       Analog_In_Data_Array       <= (others => (others => '0'));
-      no_of_chars2send           <= 0;
+      --no_of_chars2send           <= 0;
       send_msg                   <= '0';
       Message_done               <= '0';
       Send_100mS_Data            <= '0';    
@@ -237,7 +239,7 @@ begin
             
             if Analog_Input_Valid = '1' and Analog_Trig = '1' then
                Analog_Input_Load <= '1';  
-               no_of_chars2send  <= 103;      -- Latch AI no of chars
+               --no_of_chars2send  <= 103;      -- Latch AI no of chars
             end if;  
 
             if Analog_Input_Load = '1' then
