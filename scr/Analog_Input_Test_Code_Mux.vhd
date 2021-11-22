@@ -67,7 +67,7 @@ architecture Arch_DUT of Analog_Input_Test_Code_Mux is
   constant Analog_Card_1    : std_logic_vector(7 downto 0) := X"30";
   constant Analog_Card_2    : std_logic_vector(7 downto 0) := X"31";
 
-  constant no_of_chars2send   : integer range 0 to 255   :=  103;
+  constant no_of_chars2send   : integer range 0 to 255   :=  104;
 
 type tx_states 	is (idle, sync, send_start, send_data, CRC_ready, send_stop);
 type tx_data_array is array (0 to 255) of std_logic_vector(7 downto 0);
@@ -249,7 +249,7 @@ begin
                   Request_Send_State   <= Request_Idle;
                else
                   analog_data_load := analog_data_load + 1;
-                  for i in 0 to 95 loop
+                  for i in 0 to 96 loop
                      if i = 0 then
                         Analog_In_Data_Array(0) <= Analog_Card_1;
                      elsif i > 0 then
@@ -299,10 +299,13 @@ begin
                   elsif (i = 4) then
                      data2send(i)   <= mode_i;
                      CRC2send(i)    <= mode_i;
-                  elsif (i > 4) then
+                  elsif (i = 5) then
+                     data2send(i)   <= Analog_Card_1;
+                     CRC2send(i)    <= Analog_Card_1;
+                  elsif (i > 5) then
                      -- Analog Input Message
-                     data2send(i)   <= Analog_In_Data_Array(i-5);
-                     CRC2send(i)    <= Analog_In_Data_Array(i-5);
+                     data2send(i)   <= Analog_In_Data_Array(i-6);
+                     CRC2send(i)    <= Analog_In_Data_Array(i-6);
                   end if;
                end loop;
             end if;

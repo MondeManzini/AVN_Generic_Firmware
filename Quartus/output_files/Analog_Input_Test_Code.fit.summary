@@ -1,12 +1,12 @@
-Fitter Status : Successful - Fri Nov 12 13:17:59 2021
+Fitter Status : Successful - Mon Nov 22 14:14:57 2021
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : Analog_Input_Test_Code
 Top-level Entity Name : Analog_Input_Test_Code
 Family : Cyclone IV E
 Device : EP4CE22F17C6
 Timing Models : Final
-Total logic elements : 3,725 / 22,320 ( 17 % )
-    Total combinational functions : 1,824 / 22,320 ( 8 % )
+Total logic elements : 3,731 / 22,320 ( 17 % )
+    Total combinational functions : 1,822 / 22,320 ( 8 % )
     Dedicated logic registers : 3,339 / 22,320 ( 15 % )
 Total registers : 3339
 Total pins : 104 / 154 ( 68 % )
