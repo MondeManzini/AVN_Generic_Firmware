@@ -254,7 +254,7 @@ begin
                         Analog_In_Data_Array(0) <= Analog_Card_1;
                      elsif i > 0 then
                         --Analog_In_Data_Array(i) <= Analog_Data((15+(i * 16)) downto (0+(i * 16)));
-                        Analog_In_Data_Array(i-1) <= Analog_Data((7+((i-1) * 8)) downto (0+((i-1) * 8))); 
+                        Analog_In_Data_Array(i-1) <= Analog_Data((7+((i-1) * 8)) downto (0+((i-1) * 8)));                 
                         --Analog_In_Data_Array(24-1) <= Analog_Data((7+((24-1) * 8)) downto (0+((24-1) * 8)));
                         --Analog_In_Data_Array(24-1) <= Analog_Data((191 downto 184);  
                         --Analog_In_Data_Array(25-1) <= Analog_Data((7+((25-1) * 8)) downto (0+((25-1) * 8)));
@@ -302,7 +302,7 @@ begin
                   elsif (i = 5) then
                      data2send(i)   <= Analog_Card_1;
                      CRC2send(i)    <= Analog_Card_1;
-                  elsif (i > 5) then
+                  elsif (i > 5) and (i < 102) then
                      -- Analog Input Message
                      data2send(i)   <= Analog_In_Data_Array(i-6);
                      CRC2send(i)    <= Analog_In_Data_Array(i-6);

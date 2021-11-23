@@ -1,5 +1,5 @@
 Fitter report for Analog_Input_Test_Code
-Mon Nov 22 14:14:57 2021
+Mon Nov 22 15:02:21 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -69,17 +69,17 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Mon Nov 22 14:14:57 2021       ;
+; Fitter Status                      ; Successful - Mon Nov 22 15:02:21 2021       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; Analog_Input_Test_Code                      ;
 ; Top-level Entity Name              ; Analog_Input_Test_Code                      ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE22F17C6                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 3,731 / 22,320 ( 17 % )                     ;
-;     Total combinational functions  ; 1,822 / 22,320 ( 8 % )                      ;
-;     Dedicated logic registers      ; 3,339 / 22,320 ( 15 % )                     ;
-; Total registers                    ; 3339                                        ;
+; Total logic elements               ; 3,768 / 22,320 ( 17 % )                     ;
+;     Total combinational functions  ; 1,841 / 22,320 ( 8 % )                      ;
+;     Dedicated logic registers      ; 3,371 / 22,320 ( 15 % )                     ;
+; Total registers                    ; 3371                                        ;
 ; Total pins                         ; 104 / 154 ( 68 % )                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 608,256 ( 0 % )                         ;
@@ -162,7 +162,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   4.4%      ;
+;     Processor 2            ;   4.5%      ;
 +----------------------------+-------------+
 
 
@@ -285,8 +285,8 @@ https://fpgasoftware.intel.com/eula.
 ; Type                ; Total [A + B]       ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+---------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                     ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 5460 ) ; 0.00 % ( 0 / 5460 )        ; 0.00 % ( 0 / 5460 )      ;
-;     -- Achieved     ; 0.00 % ( 0 / 5460 ) ; 0.00 % ( 0 / 5460 )        ; 0.00 % ( 0 / 5460 )      ;
+;     -- Requested    ; 0.00 % ( 0 / 5511 ) ; 0.00 % ( 0 / 5511 )        ; 0.00 % ( 0 / 5511 )      ;
+;     -- Achieved     ; 0.00 % ( 0 / 5511 ) ; 0.00 % ( 0 / 5511 )        ; 0.00 % ( 0 / 5511 )      ;
 ;                     ;                     ;                            ;                          ;
 ; Routing (by net)    ;                     ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )    ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -309,7 +309,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 5450 )   ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 5501 )   ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -325,26 +325,26 @@ The pin-out file can be found in /home/labuser/Downloads/AVN_Generic_Firmware/Qu
 +---------------------------------------------+-------------------------+
 ; Resource                                    ; Usage                   ;
 +---------------------------------------------+-------------------------+
-; Total logic elements                        ; 3,731 / 22,320 ( 17 % ) ;
-;     -- Combinational with no register       ; 392                     ;
-;     -- Register only                        ; 1909                    ;
-;     -- Combinational with a register        ; 1430                    ;
+; Total logic elements                        ; 3,768 / 22,320 ( 17 % ) ;
+;     -- Combinational with no register       ; 397                     ;
+;     -- Register only                        ; 1927                    ;
+;     -- Combinational with a register        ; 1444                    ;
 ;                                             ;                         ;
 ; Logic element usage by number of LUT inputs ;                         ;
-;     -- 4 input functions                    ; 747                     ;
-;     -- 3 input functions                    ; 834                     ;
-;     -- <=2 input functions                  ; 241                     ;
-;     -- Register only                        ; 1909                    ;
+;     -- 4 input functions                    ; 753                     ;
+;     -- 3 input functions                    ; 852                     ;
+;     -- <=2 input functions                  ; 236                     ;
+;     -- Register only                        ; 1927                    ;
 ;                                             ;                         ;
 ; Logic elements by mode                      ;                         ;
-;     -- normal mode                          ; 1701                    ;
+;     -- normal mode                          ; 1720                    ;
 ;     -- arithmetic mode                      ; 121                     ;
 ;                                             ;                         ;
-; Total registers*                            ; 3,339 / 23,018 ( 15 % ) ;
-;     -- Dedicated logic registers            ; 3,339 / 22,320 ( 15 % ) ;
+; Total registers*                            ; 3,371 / 23,018 ( 15 % ) ;
+;     -- Dedicated logic registers            ; 3,371 / 22,320 ( 15 % ) ;
 ;     -- I/O registers                        ; 0 / 698 ( 0 % )         ;
 ;                                             ;                         ;
-; Total LABs:  partially or completely used   ; 256 / 1,395 ( 18 % )    ;
+; Total LABs:  partially or completely used   ; 263 / 1,395 ( 19 % )    ;
 ; Virtual pins                                ; 0                       ;
 ; I/O pins                                    ; 104 / 154 ( 68 % )      ;
 ;     -- Clock pins                           ; 8 / 7 ( 114 % )         ;
@@ -362,12 +362,12 @@ The pin-out file can be found in /home/labuser/Downloads/AVN_Generic_Firmware/Qu
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )           ;
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )           ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )           ;
-; Average interconnect usage (total/H/V)      ; 3.0% / 2.7% / 3.4%      ;
-; Peak interconnect usage (total/H/V)         ; 19.5% / 18.4% / 21.1%   ;
-; Maximum fan-out                             ; 3339                    ;
-; Highest non-global fan-out                  ; 764                     ;
-; Total fan-out                               ; 20265                   ;
-; Average fan-out                             ; 2.85                    ;
+; Average interconnect usage (total/H/V)      ; 3.0% / 2.8% / 3.4%      ;
+; Peak interconnect usage (total/H/V)         ; 21.0% / 18.9% / 24.0%   ;
+; Maximum fan-out                             ; 3371                    ;
+; Highest non-global fan-out                  ; 772                     ;
+; Total fan-out                               ; 20442                   ;
+; Average fan-out                             ; 2.86                    ;
 +---------------------------------------------+-------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -380,26 +380,26 @@ The pin-out file can be found in /home/labuser/Downloads/AVN_Generic_Firmware/Qu
 +---------------------------------------------+-----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                   ; Low                            ;
 ;                                             ;                       ;                                ;
-; Total logic elements                        ; 3731 / 22320 ( 17 % ) ; 0 / 22320 ( 0 % )              ;
-;     -- Combinational with no register       ; 392                   ; 0                              ;
-;     -- Register only                        ; 1909                  ; 0                              ;
-;     -- Combinational with a register        ; 1430                  ; 0                              ;
+; Total logic elements                        ; 3768 / 22320 ( 17 % ) ; 0 / 22320 ( 0 % )              ;
+;     -- Combinational with no register       ; 397                   ; 0                              ;
+;     -- Register only                        ; 1927                  ; 0                              ;
+;     -- Combinational with a register        ; 1444                  ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic element usage by number of LUT inputs ;                       ;                                ;
-;     -- 4 input functions                    ; 747                   ; 0                              ;
-;     -- 3 input functions                    ; 834                   ; 0                              ;
-;     -- <=2 input functions                  ; 241                   ; 0                              ;
-;     -- Register only                        ; 1909                  ; 0                              ;
+;     -- 4 input functions                    ; 753                   ; 0                              ;
+;     -- 3 input functions                    ; 852                   ; 0                              ;
+;     -- <=2 input functions                  ; 236                   ; 0                              ;
+;     -- Register only                        ; 1927                  ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic elements by mode                      ;                       ;                                ;
-;     -- normal mode                          ; 1701                  ; 0                              ;
+;     -- normal mode                          ; 1720                  ; 0                              ;
 ;     -- arithmetic mode                      ; 121                   ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total registers                             ; 3339                  ; 0                              ;
-;     -- Dedicated logic registers            ; 3339 / 22320 ( 15 % ) ; 0 / 22320 ( 0 % )              ;
+; Total registers                             ; 3371                  ; 0                              ;
+;     -- Dedicated logic registers            ; 3371 / 22320 ( 15 % ) ; 0 / 22320 ( 0 % )              ;
 ;     -- I/O registers                        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total LABs:  partially or completely used   ; 256 / 1395 ( 18 % )   ; 0 / 1395 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 263 / 1395 ( 19 % )   ; 0 / 1395 ( 0 % )               ;
 ;                                             ;                       ;                                ;
 ; Virtual pins                                ; 0                     ; 0                              ;
 ; I/O pins                                    ; 104                   ; 0                              ;
@@ -415,8 +415,8 @@ The pin-out file can be found in /home/labuser/Downloads/AVN_Generic_Firmware/Qu
 ;     -- Registered Output Connections        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Internal Connections                        ;                       ;                                ;
-;     -- Total Connections                    ; 20260                 ; 5                              ;
-;     -- Registered Connections               ; 6435                  ; 0                              ;
+;     -- Total Connections                    ; 20437                 ; 5                              ;
+;     -- Registered Connections               ; 6523                  ; 0                              ;
 ;                                             ;                       ;                                ;
 ; External Connections                        ;                       ;                                ;
 ;     -- Top                                  ; 162                   ; 0                              ;
@@ -448,7 +448,7 @@ The pin-out file can be found in /home/labuser/Downloads/AVN_Generic_Firmware/Qu
 +--------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 ; Name         ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +--------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
-; CLOCK_50     ; R8    ; 3        ; 27           ; 0            ; 21           ; 3339                  ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVTTL  ; --                        ; User                 ; no        ;
+; CLOCK_50     ; R8    ; 3        ; 27           ; 0            ; 21           ; 3371                  ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVTTL  ; --                        ; User                 ; no        ;
 ; GPIO_0_IN[0] ; A8    ; 8        ; 25           ; 34           ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVTTL  ; --                        ; User                 ; no        ;
 ; GPIO_0_IN[1] ; B8    ; 8        ; 25           ; 34           ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVTTL  ; --                        ; User                 ; no        ;
 ; GPIO_1_IN[0] ; T9    ; 4        ; 27           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVTTL  ; --                        ; User                 ; no        ;
@@ -564,7 +564,7 @@ The pin-out file can be found in /home/labuser/Downloads/AVN_Generic_Firmware/Qu
 ; GPIO_2[6]    ; D15   ; 6        ; 53           ; 26           ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                               ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                        ;
 ; GPIO_2[7]    ; D14   ; 7        ; 51           ; 34           ; 7            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                               ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                        ;
 ; GPIO_2[8]    ; F15   ; 6        ; 53           ; 22           ; 7            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                               ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                        ;
-; GPIO_2_UP[0] ; T6    ; 3        ; 14           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; Fitter               ; 0 pF                 ; -                                                        ;
+; GPIO_2_UP[0] ; N3    ; 3        ; 1            ; 0            ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; Fitter               ; 0 pF                 ; -                                                        ;
 ; GPIO_2_UP[1] ; R4    ; 3        ; 5            ; 0            ; 21           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; Fitter               ; 0 pF                 ; -                                                        ;
 ; GPIO_2_UP[2] ; R3    ; 3        ; 1            ; 0            ; 7            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; Fitter               ; 0 pF                 ; -                                                        ;
 ; I2C_SDAT     ; F1    ; 1        ; 0            ; 23           ; 0            ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; 2         ; yes             ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 8mA              ; Off                               ; --                        ; no                         ; User                 ; 0 pF                 ; -                                                        ;
@@ -835,7 +835,7 @@ The pin-out file can be found in /home/labuser/Downloads/AVN_Generic_Firmware/Qu
 ; M16      ; 148        ; 5        ; GPIO_2_IN[2]                                              ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; N1       ; 44         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; N2       ; 43         ; 2        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
-; N3       ; 52         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
+; N3       ; 52         ; 3        ; GPIO_2_UP[0]                                              ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
 ; N4       ;            ;          ; VCCD_PLL1                                                 ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; N5       ; 62         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; N6       ; 63         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -886,7 +886,7 @@ The pin-out file can be found in /home/labuser/Downloads/AVN_Generic_Firmware/Qu
 ; T3       ; 55         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; T4       ; 61         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; T5       ; 72         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; T6       ; 74         ; 3        ; GPIO_2_UP[0]                                              ; bidir  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; T6       ; 74         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; T7       ; 77         ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; T8       ; 87         ; 3        ; SW[1]                                                     ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; T9       ; 89         ; 4        ; GPIO_1_IN[0]                                              ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
@@ -1007,11 +1007,11 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +--------------------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------------------------+----------------------------+--------------+
 ; Compilation Hierarchy Node                                   ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                             ; Entity Name                ; Library Name ;
 +--------------------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------------------------+----------------------------+--------------+
-; |Analog_Input_Test_Code                                      ; 3731 (58)   ; 3339 (36)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 104  ; 0            ; 392 (22)     ; 1909 (1)          ; 1430 (35)        ; |Analog_Input_Test_Code                                                         ; Analog_Input_Test_Code     ; work         ;
-;    |Analog_Input_Test_Code_Mux:Analog_Input_Test_Code_Mux_1| ; 1867 (1867) ; 1652 (1652)               ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 215 (215)    ; 371 (371)         ; 1281 (1281)      ; |Analog_Input_Test_Code|Analog_Input_Test_Code_Mux:Analog_Input_Test_Code_Mux_1 ; Analog_Input_Test_Code_Mux ; work         ;
+; |Analog_Input_Test_Code                                      ; 3768 (58)   ; 3371 (36)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 104  ; 0            ; 397 (22)     ; 1927 (1)          ; 1444 (35)        ; |Analog_Input_Test_Code                                                         ; Analog_Input_Test_Code     ; work         ;
+;    |Analog_Input_Test_Code_Mux:Analog_Input_Test_Code_Mux_1| ; 1887 (1887) ; 1668 (1668)               ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 218 (218)    ; 376 (376)         ; 1293 (1293)      ; |Analog_Input_Test_Code|Analog_Input_Test_Code_Mux:Analog_Input_Test_Code_Mux_1 ; Analog_Input_Test_Code_Mux ; work         ;
 ;    |Baud_Rate_Generator:Analog_Input_Test_Code_Baud_1|       ; 18 (18)     ; 15 (15)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 15 (15)          ; |Analog_Input_Test_Code|Baud_Rate_Generator:Analog_Input_Test_Code_Baud_1       ; Baud_Rate_Generator        ; work         ;
-;    |SPI_Analog_Driver:SPI_Analog_Driver_1|                   ; 105 (105)   ; 72 (72)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 33 (33)      ; 18 (18)           ; 54 (54)          ; |Analog_Input_Test_Code|SPI_Analog_Driver:SPI_Analog_Driver_1                   ; SPI_Analog_Driver          ; work         ;
-;    |SPI_Analog_Handler:SPI_Analog_Handler_1|                 ; 1683 (1683) ; 1564 (1564)               ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 119 (119)    ; 1519 (1519)       ; 45 (45)          ; |Analog_Input_Test_Code|SPI_Analog_Handler:SPI_Analog_Handler_1                 ; SPI_Analog_Handler         ; work         ;
+;    |SPI_Analog_Driver:SPI_Analog_Driver_1|                   ; 104 (104)   ; 72 (72)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 32 (32)      ; 17 (17)           ; 55 (55)          ; |Analog_Input_Test_Code|SPI_Analog_Driver:SPI_Analog_Driver_1                   ; SPI_Analog_Driver          ; work         ;
+;    |SPI_Analog_Handler:SPI_Analog_Handler_1|                 ; 1702 (1702) ; 1580 (1580)               ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 122 (122)    ; 1533 (1533)       ; 47 (47)          ; |Analog_Input_Test_Code|SPI_Analog_Handler:SPI_Analog_Handler_1                 ; SPI_Analog_Handler         ; work         ;
 +--------------------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------------------------+----------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1221,22 +1221,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; GPIO_1[33]                                                     ;                   ;         ;
 ; GPIO_0[0]                                                      ;                   ;         ;
 ; GPIO_0[1]                                                      ;                   ;         ;
-;      - SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_data_o[0]~0   ; 1                 ; 6       ;
-;      - SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_data_o[4]~1   ; 1                 ; 6       ;
-;      - SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_data_o[2]~2   ; 1                 ; 6       ;
-;      - SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_data_o[6]~3   ; 1                 ; 6       ;
-;      - SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_data_o[13]~4  ; 1                 ; 6       ;
-;      - SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_data_o[11]~5  ; 1                 ; 6       ;
-;      - SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_data_o[9]~6   ; 1                 ; 6       ;
-;      - SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_data_o[15]~7  ; 1                 ; 6       ;
-;      - SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_data_o[12]~8  ; 1                 ; 6       ;
-;      - SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_data_o[10]~9  ; 1                 ; 6       ;
-;      - SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_data_o[8]~10  ; 1                 ; 6       ;
-;      - SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_data_o[14]~11 ; 1                 ; 6       ;
-;      - SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_data_o[3]~12  ; 1                 ; 6       ;
-;      - SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_data_o[5]~13  ; 1                 ; 6       ;
-;      - SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_data_o[1]~14  ; 1                 ; 6       ;
-;      - SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_data_o[7]~15  ; 1                 ; 6       ;
+;      - SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_data_o[5]~0   ; 1                 ; 6       ;
+;      - SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_data_o[6]~1   ; 1                 ; 6       ;
+;      - SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_data_o[4]~2   ; 1                 ; 6       ;
+;      - SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_data_o[7]~3   ; 1                 ; 6       ;
+;      - SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_data_o[9]~4   ; 1                 ; 6       ;
+;      - SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_data_o[10]~5  ; 1                 ; 6       ;
+;      - SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_data_o[8]~6   ; 1                 ; 6       ;
+;      - SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_data_o[11]~7  ; 1                 ; 6       ;
+;      - SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_data_o[1]~8   ; 1                 ; 6       ;
+;      - SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_data_o[2]~9   ; 1                 ; 6       ;
+;      - SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_data_o[0]~10  ; 1                 ; 6       ;
+;      - SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_data_o[3]~11  ; 1                 ; 6       ;
+;      - SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_data_o[14]~12 ; 1                 ; 6       ;
+;      - SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_data_o[13]~13 ; 1                 ; 6       ;
+;      - SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_data_o[12]~14 ; 1                 ; 6       ;
+;      - SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_data_o[15]~15 ; 1                 ; 6       ;
 ; GPIO_0[2]                                                      ;                   ;         ;
 ; GPIO_0[3]                                                      ;                   ;         ;
 ; GPIO_0[4]                                                      ;                   ;         ;
@@ -1252,84 +1252,84 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------------------+--------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
 ; Name                                                                                       ; Location           ; Fan-Out ; Usage         ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +--------------------------------------------------------------------------------------------+--------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
-; Analog_Input_Test_Code_Mux:Analog_Input_Test_Code_Mux_1|CRC2send[68][1]~0                  ; LCCOMB_X20_Y21_N26 ; 762     ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; Analog_Input_Test_Code_Mux:Analog_Input_Test_Code_Mux_1|Selector12~2                       ; LCCOMB_X32_Y15_N28 ; 2       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; Analog_Input_Test_Code_Mux:Analog_Input_Test_Code_Mux_1|X[5]~3                             ; LCCOMB_X29_Y18_N0  ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; Analog_Input_Test_Code_Mux:Analog_Input_Test_Code_Mux_1|\gen_tx_ser_data:wait_cnt_all[5]~0 ; LCCOMB_X20_Y21_N30 ; 7       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; Analog_Input_Test_Code_Mux:Analog_Input_Test_Code_Mux_1|\uart_tx:Wait_cnt[5]~1             ; LCCOMB_X32_Y12_N16 ; 6       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; Analog_Input_Test_Code_Mux:Analog_Input_Test_Code_Mux_1|\uart_tx:bit_counter[0]~0          ; LCCOMB_X31_Y15_N18 ; 4       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; Analog_Input_Test_Code_Mux:Analog_Input_Test_Code_Mux_1|data2send[100][3]~1                ; LCCOMB_X30_Y19_N6  ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; Analog_Input_Test_Code_Mux:Analog_Input_Test_Code_Mux_1|no_of_chars[3]~26                  ; LCCOMB_X29_Y18_N2  ; 8       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; Analog_Input_Test_Code_Mux:Analog_Input_Test_Code_Mux_1|request_send_state.Request_Idle    ; FF_X19_Y23_N13     ; 29      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; Analog_Input_Test_Code_Mux:Analog_Input_Test_Code_Mux_1|tx_state.CRC_ready                 ; FF_X32_Y15_N21     ; 11      ; Sync. clear   ; no     ; --                   ; --               ; --                        ;
-; Analog_Input_Test_Code_Mux:Analog_Input_Test_Code_Mux_1|tx_state.send_stop                 ; FF_X32_Y15_N13     ; 14      ; Sync. clear   ; no     ; --                   ; --               ; --                        ;
-; Baud_Rate_Generator:Analog_Input_Test_Code_Baud_1|Equal1~3                                 ; LCCOMB_X28_Y11_N0  ; 14      ; Sync. load    ; no     ; --                   ; --               ; --                        ;
-; CLOCK_50                                                                                   ; PIN_R8             ; 3339    ; Clock         ; yes    ; Global Clock         ; GCLK18           ; --                        ;
-; Equal1~2                                                                                   ; LCCOMB_X52_Y17_N12 ; 8       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; RST_I_i                                                                                    ; FF_X52_Y17_N5      ; 31      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; RST_I_i                                                                                    ; FF_X52_Y17_N5      ; 3293    ; Async. clear  ; yes    ; Global Clock         ; GCLK5            ; --                        ;
-; SPI_Analog_Driver:SPI_Analog_Driver_1|Mosi~en                                              ; FF_X16_Y23_N11     ; 1       ; Output enable ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_Drive_state.Convertion_Start                     ; FF_X15_Y23_N7      ; 5       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_Drive_state.wait_1                               ; FF_X15_Y23_N9      ; 11      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Driver:SPI_Analog_Driver_1|Selector15~2                                         ; LCCOMB_X16_Y23_N22 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Driver:SPI_Analog_Driver_1|WideOr2~0                                            ; LCCOMB_X16_Y23_N28 ; 2       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Driver:SPI_Analog_Driver_1|\SPI_Driver:bit_number[0]~0                          ; LCCOMB_X15_Y23_N4  ; 5       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Analog_Data[504]~0                                 ; LCCOMB_X16_Y20_N20 ; 761     ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~23                                        ; LCCOMB_X16_Y17_N6  ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~24                                        ; LCCOMB_X18_Y19_N22 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~25                                        ; LCCOMB_X18_Y19_N24 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~27                                        ; LCCOMB_X18_Y19_N6  ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~28                                        ; LCCOMB_X16_Y17_N0  ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~29                                        ; LCCOMB_X16_Y17_N2  ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~31                                        ; LCCOMB_X16_Y19_N24 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~32                                        ; LCCOMB_X15_Y19_N10 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~33                                        ; LCCOMB_X16_Y19_N14 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~34                                        ; LCCOMB_X16_Y19_N28 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~35                                        ; LCCOMB_X16_Y19_N10 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~37                                        ; LCCOMB_X18_Y19_N0  ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~38                                        ; LCCOMB_X18_Y19_N30 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~39                                        ; LCCOMB_X18_Y19_N20 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~40                                        ; LCCOMB_X18_Y19_N26 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~42                                        ; LCCOMB_X18_Y19_N2  ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~43                                        ; LCCOMB_X15_Y20_N28 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~44                                        ; LCCOMB_X18_Y19_N16 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~45                                        ; LCCOMB_X16_Y17_N16 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~46                                        ; LCCOMB_X19_Y17_N2  ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~47                                        ; LCCOMB_X16_Y17_N14 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~48                                        ; LCCOMB_X16_Y17_N12 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~49                                        ; LCCOMB_X16_Y17_N10 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~50                                        ; LCCOMB_X16_Y17_N4  ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~51                                        ; LCCOMB_X18_Y19_N14 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~52                                        ; LCCOMB_X16_Y17_N30 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~54                                        ; LCCOMB_X18_Y19_N8  ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~55                                        ; LCCOMB_X15_Y16_N4  ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~56                                        ; LCCOMB_X16_Y17_N20 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~58                                        ; LCCOMB_X18_Y19_N18 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~59                                        ; LCCOMB_X14_Y20_N12 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~60                                        ; LCCOMB_X15_Y19_N20 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~61                                        ; LCCOMB_X15_Y16_N14 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~62                                        ; LCCOMB_X18_Y19_N28 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~63                                        ; LCCOMB_X18_Y19_N10 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~64                                        ; LCCOMB_X15_Y15_N20 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~65                                        ; LCCOMB_X16_Y19_N20 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~66                                        ; LCCOMB_X16_Y19_N30 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~67                                        ; LCCOMB_X16_Y19_N4  ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~68                                        ; LCCOMB_X15_Y19_N6  ; 8       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~69                                        ; LCCOMB_X16_Y19_N2  ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~70                                        ; LCCOMB_X16_Y19_N16 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~71                                        ; LCCOMB_X16_Y19_N22 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~72                                        ; LCCOMB_X16_Y19_N8  ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~74                                        ; LCCOMB_X15_Y19_N14 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~75                                        ; LCCOMB_X16_Y19_N26 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~76                                        ; LCCOMB_X16_Y19_N12 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~77                                        ; LCCOMB_X16_Y19_N18 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|SPI_Drive_state.Data_Wait_State                    ; FF_X15_Y21_N25     ; 14      ; Sync. load    ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Selector765~1                                      ; LCCOMB_X14_Y22_N12 ; 4       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Selector769~2                                      ; LCCOMB_X16_Y22_N12 ; 3       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Selector772~0                                      ; LCCOMB_X15_Y21_N22 ; 7       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|\SPI_Driver:Cycle_cnt[6]~4                         ; LCCOMB_X15_Y20_N16 ; 7       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|\SPI_Driver:data_valid_cnt[6]~0                    ; LCCOMB_X15_Y19_N28 ; 11      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|\SPI_Driver:wait_cnt[5]~0                          ; LCCOMB_X15_Y21_N2  ; 8       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; Analog_Input_Test_Code_Mux:Analog_Input_Test_Code_Mux_1|CRC2send[70][4]~0                  ; LCCOMB_X15_Y16_N30 ; 770     ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; Analog_Input_Test_Code_Mux:Analog_Input_Test_Code_Mux_1|Selector12~2                       ; LCCOMB_X23_Y13_N14 ; 2       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; Analog_Input_Test_Code_Mux:Analog_Input_Test_Code_Mux_1|X[4]~2                             ; LCCOMB_X28_Y15_N0  ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; Analog_Input_Test_Code_Mux:Analog_Input_Test_Code_Mux_1|\gen_tx_ser_data:wait_cnt_all[5]~0 ; LCCOMB_X15_Y16_N26 ; 7       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; Analog_Input_Test_Code_Mux:Analog_Input_Test_Code_Mux_1|\uart_tx:Wait_cnt[0]~3             ; LCCOMB_X23_Y13_N26 ; 6       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; Analog_Input_Test_Code_Mux:Analog_Input_Test_Code_Mux_1|\uart_tx:bit_counter[0]~0          ; LCCOMB_X24_Y13_N6  ; 4       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; Analog_Input_Test_Code_Mux:Analog_Input_Test_Code_Mux_1|data2send[102][1]~1                ; LCCOMB_X15_Y16_N24 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; Analog_Input_Test_Code_Mux:Analog_Input_Test_Code_Mux_1|no_of_chars[0]~26                  ; LCCOMB_X28_Y15_N30 ; 8       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; Analog_Input_Test_Code_Mux:Analog_Input_Test_Code_Mux_1|request_send_state.Request_Idle    ; FF_X15_Y14_N1      ; 29      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; Analog_Input_Test_Code_Mux:Analog_Input_Test_Code_Mux_1|tx_state.CRC_ready                 ; FF_X24_Y13_N31     ; 11      ; Sync. clear   ; no     ; --                   ; --               ; --                        ;
+; Analog_Input_Test_Code_Mux:Analog_Input_Test_Code_Mux_1|tx_state.send_stop                 ; FF_X24_Y13_N17     ; 13      ; Sync. clear   ; no     ; --                   ; --               ; --                        ;
+; Baud_Rate_Generator:Analog_Input_Test_Code_Baud_1|Equal1~3                                 ; LCCOMB_X9_Y15_N0   ; 14      ; Sync. load    ; no     ; --                   ; --               ; --                        ;
+; CLOCK_50                                                                                   ; PIN_R8             ; 3371    ; Clock         ; yes    ; Global Clock         ; GCLK18           ; --                        ;
+; Equal1~2                                                                                   ; LCCOMB_X1_Y16_N8   ; 8       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; RST_I_i                                                                                    ; FF_X1_Y16_N17      ; 31      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; RST_I_i                                                                                    ; FF_X1_Y16_N17      ; 3325    ; Async. clear  ; yes    ; Global Clock         ; GCLK4            ; --                        ;
+; SPI_Analog_Driver:SPI_Analog_Driver_1|Mosi~en                                              ; FF_X12_Y23_N31     ; 1       ; Output enable ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_Drive_state.Convertion_Start                     ; FF_X10_Y23_N9      ; 5       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Driver:SPI_Analog_Driver_1|SPI_Drive_state.wait_1                               ; FF_X11_Y23_N29     ; 11      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Driver:SPI_Analog_Driver_1|Selector15~2                                         ; LCCOMB_X12_Y23_N8  ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Driver:SPI_Analog_Driver_1|WideOr2~0                                            ; LCCOMB_X12_Y23_N22 ; 2       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Driver:SPI_Analog_Driver_1|\SPI_Driver:bit_number[3]~0                          ; LCCOMB_X12_Y23_N12 ; 5       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Analog_Data[515]~0                                 ; LCCOMB_X11_Y20_N12 ; 769     ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~31                                        ; LCCOMB_X18_Y20_N8  ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~32                                        ; LCCOMB_X18_Y20_N10 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~33                                        ; LCCOMB_X12_Y20_N20 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~36                                        ; LCCOMB_X18_Y20_N14 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~38                                        ; LCCOMB_X20_Y20_N28 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~39                                        ; LCCOMB_X18_Y20_N20 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~40                                        ; LCCOMB_X20_Y20_N30 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~42                                        ; LCCOMB_X20_Y20_N24 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~43                                        ; LCCOMB_X14_Y20_N22 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~44                                        ; LCCOMB_X19_Y20_N22 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~45                                        ; LCCOMB_X16_Y20_N4  ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~47                                        ; LCCOMB_X20_Y20_N22 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~49                                        ; LCCOMB_X19_Y20_N16 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~50                                        ; LCCOMB_X20_Y20_N4  ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~51                                        ; LCCOMB_X19_Y20_N2  ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~52                                        ; LCCOMB_X19_Y20_N0  ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~54                                        ; LCCOMB_X20_Y20_N20 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~55                                        ; LCCOMB_X20_Y20_N18 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~56                                        ; LCCOMB_X20_Y20_N12 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~57                                        ; LCCOMB_X20_Y20_N26 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~58                                        ; LCCOMB_X12_Y20_N22 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~60                                        ; LCCOMB_X20_Y20_N0  ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~61                                        ; LCCOMB_X19_Y20_N12 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~62                                        ; LCCOMB_X20_Y20_N14 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~64                                        ; LCCOMB_X18_Y20_N2  ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~65                                        ; LCCOMB_X18_Y20_N12 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~66                                        ; LCCOMB_X19_Y20_N30 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~67                                        ; LCCOMB_X14_Y20_N8  ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~68                                        ; LCCOMB_X19_Y20_N20 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~69                                        ; LCCOMB_X19_Y20_N10 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~70                                        ; LCCOMB_X18_Y20_N30 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~71                                        ; LCCOMB_X16_Y20_N14 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~72                                        ; LCCOMB_X19_Y20_N4  ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~73                                        ; LCCOMB_X16_Y20_N8  ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~74                                        ; LCCOMB_X18_Y20_N4  ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~75                                        ; LCCOMB_X18_Y20_N6  ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~76                                        ; LCCOMB_X14_Y20_N4  ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~78                                        ; LCCOMB_X12_Y20_N28 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~79                                        ; LCCOMB_X17_Y20_N30 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~80                                        ; LCCOMB_X18_Y20_N28 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~81                                        ; LCCOMB_X18_Y20_N26 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~82                                        ; LCCOMB_X20_Y20_N8  ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~83                                        ; LCCOMB_X20_Y20_N2  ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~84                                        ; LCCOMB_X12_Y20_N30 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~85                                        ; LCCOMB_X20_Y20_N16 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~87                                        ; LCCOMB_X18_Y20_N16 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~88                                        ; LCCOMB_X20_Y20_N6  ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Decoder0~89                                        ; LCCOMB_X18_Y20_N22 ; 16      ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|SPI_Drive_state.Data_Wait_State                    ; FF_X14_Y21_N7      ; 14      ; Sync. load    ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Selector765~1                                      ; LCCOMB_X10_Y20_N12 ; 4       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Selector769~2                                      ; LCCOMB_X12_Y21_N6  ; 3       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Selector772~0                                      ; LCCOMB_X12_Y21_N4  ; 7       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|\SPI_Driver:Cycle_cnt[1]~6                         ; LCCOMB_X14_Y21_N24 ; 7       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|\SPI_Driver:data_valid_cnt[6]~0                    ; LCCOMB_X14_Y20_N0  ; 9       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|\SPI_Driver:wait_cnt[5]~0                          ; LCCOMB_X14_Y21_N14 ; 8       ; Clock enable  ; no     ; --                   ; --               ; --                        ;
 +--------------------------------------------------------------------------------------------+--------------------+---------+---------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1338,8 +1338,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------+---------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 ; Name     ; Location      ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +----------+---------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; CLOCK_50 ; PIN_R8        ; 3339    ; 1727                                 ; Global Clock         ; GCLK18           ; --                        ;
-; RST_I_i  ; FF_X52_Y17_N5 ; 3293    ; 0                                    ; Global Clock         ; GCLK5            ; --                        ;
+; CLOCK_50 ; PIN_R8        ; 3371    ; 1850                                 ; Global Clock         ; GCLK18           ; --                        ;
+; RST_I_i  ; FF_X1_Y16_N17 ; 3325    ; 0                                    ; Global Clock         ; GCLK4            ; --                        ;
 +----------+---------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
@@ -1348,9 +1348,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------------------+---------+
 ; Name                                                                                    ; Fan-Out ;
 +-----------------------------------------------------------------------------------------+---------+
-; Analog_Input_Test_Code_Mux:Analog_Input_Test_Code_Mux_1|Analog_In_Data_Array[33][2]~762 ; 764     ;
-; Analog_Input_Test_Code_Mux:Analog_Input_Test_Code_Mux_1|CRC2send[68][1]~0               ; 762     ;
-; SPI_Analog_Handler:SPI_Analog_Handler_1|Analog_Data[504]~0                              ; 761     ;
+; Analog_Input_Test_Code_Mux:Analog_Input_Test_Code_Mux_1|Analog_In_Data_Array[31][1]~770 ; 772     ;
+; Analog_Input_Test_Code_Mux:Analog_Input_Test_Code_Mux_1|CRC2send[70][4]~0               ; 770     ;
+; SPI_Analog_Handler:SPI_Analog_Handler_1|Analog_Data[515]~0                              ; 769     ;
 +-----------------------------------------------------------------------------------------+---------+
 
 
@@ -1359,163 +1359,164 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+------------------------+
 ; Routing Resource Type ; Usage                  ;
 +-----------------------+------------------------+
-; Block interconnects   ; 3,633 / 71,559 ( 5 % ) ;
-; C16 interconnects     ; 34 / 2,597 ( 1 % )     ;
-; C4 interconnects      ; 1,568 / 46,848 ( 3 % ) ;
-; Direct links          ; 715 / 71,559 ( < 1 % ) ;
+; Block interconnects   ; 3,749 / 71,559 ( 5 % ) ;
+; C16 interconnects     ; 35 / 2,597 ( 1 % )     ;
+; C4 interconnects      ; 1,604 / 46,848 ( 3 % ) ;
+; Direct links          ; 651 / 71,559 ( < 1 % ) ;
 ; Global clocks         ; 2 / 20 ( 10 % )        ;
-; Local interconnects   ; 2,050 / 24,624 ( 8 % ) ;
-; R24 interconnects     ; 54 / 2,496 ( 2 % )     ;
-; R4 interconnects      ; 1,535 / 62,424 ( 2 % ) ;
+; Local interconnects   ; 2,011 / 24,624 ( 8 % ) ;
+; R24 interconnects     ; 53 / 2,496 ( 2 % )     ;
+; R4 interconnects      ; 1,606 / 62,424 ( 3 % ) ;
 +-----------------------+------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                          ;
 +---------------------------------------------+-------------------------------+
-; Number of Logic Elements  (Average = 14.57) ; Number of LABs  (Total = 256) ;
+; Number of Logic Elements  (Average = 14.33) ; Number of LABs  (Total = 263) ;
 +---------------------------------------------+-------------------------------+
-; 1                                           ; 5                             ;
-; 2                                           ; 7                             ;
-; 3                                           ; 0                             ;
-; 4                                           ; 3                             ;
-; 5                                           ; 1                             ;
-; 6                                           ; 1                             ;
-; 7                                           ; 1                             ;
-; 8                                           ; 0                             ;
-; 9                                           ; 3                             ;
+; 1                                           ; 9                             ;
+; 2                                           ; 2                             ;
+; 3                                           ; 5                             ;
+; 4                                           ; 1                             ;
+; 5                                           ; 3                             ;
+; 6                                           ; 3                             ;
+; 7                                           ; 2                             ;
+; 8                                           ; 2                             ;
+; 9                                           ; 0                             ;
 ; 10                                          ; 2                             ;
-; 11                                          ; 4                             ;
-; 12                                          ; 4                             ;
-; 13                                          ; 4                             ;
-; 14                                          ; 13                            ;
-; 15                                          ; 19                            ;
-; 16                                          ; 189                           ;
+; 11                                          ; 2                             ;
+; 12                                          ; 5                             ;
+; 13                                          ; 11                            ;
+; 14                                          ; 6                             ;
+; 15                                          ; 16                            ;
+; 16                                          ; 194                           ;
 +---------------------------------------------+-------------------------------+
 
 
 +--------------------------------------------------------------------+
 ; LAB-wide Signals                                                   ;
 +------------------------------------+-------------------------------+
-; LAB-wide Signals  (Average = 2.79) ; Number of LABs  (Total = 256) ;
+; LAB-wide Signals  (Average = 2.84) ; Number of LABs  (Total = 263) ;
 +------------------------------------+-------------------------------+
-; 1 Async. clear                     ; 248                           ;
-; 1 Clock                            ; 250                           ;
-; 1 Clock enable                     ; 117                           ;
-; 1 Sync. clear                      ; 1                             ;
-; 2 Clock enables                    ; 97                            ;
+; 1 Async. clear                     ; 256                           ;
+; 1 Clock                            ; 259                           ;
+; 1 Clock enable                     ; 130                           ;
+; 1 Sync. load                       ; 1                             ;
+; 2 Clock enables                    ; 101                           ;
 +------------------------------------+-------------------------------+
 
 
 +------------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                          ;
 +----------------------------------------------+-------------------------------+
-; Number of Signals Sourced  (Average = 26.58) ; Number of LABs  (Total = 256) ;
+; Number of Signals Sourced  (Average = 26.02) ; Number of LABs  (Total = 263) ;
 +----------------------------------------------+-------------------------------+
 ; 0                                            ; 0                             ;
-; 1                                            ; 3                             ;
-; 2                                            ; 4                             ;
-; 3                                            ; 0                             ;
-; 4                                            ; 5                             ;
-; 5                                            ; 1                             ;
-; 6                                            ; 0                             ;
-; 7                                            ; 1                             ;
+; 1                                            ; 1                             ;
+; 2                                            ; 8                             ;
+; 3                                            ; 2                             ;
+; 4                                            ; 0                             ;
+; 5                                            ; 0                             ;
+; 6                                            ; 5                             ;
+; 7                                            ; 0                             ;
 ; 8                                            ; 1                             ;
-; 9                                            ; 0                             ;
-; 10                                           ; 1                             ;
-; 11                                           ; 0                             ;
-; 12                                           ; 3                             ;
+; 9                                            ; 1                             ;
+; 10                                           ; 2                             ;
+; 11                                           ; 1                             ;
+; 12                                           ; 2                             ;
 ; 13                                           ; 1                             ;
-; 14                                           ; 1                             ;
-; 15                                           ; 2                             ;
-; 16                                           ; 0                             ;
-; 17                                           ; 3                             ;
-; 18                                           ; 4                             ;
+; 14                                           ; 3                             ;
+; 15                                           ; 0                             ;
+; 16                                           ; 5                             ;
+; 17                                           ; 2                             ;
+; 18                                           ; 1                             ;
 ; 19                                           ; 1                             ;
-; 20                                           ; 3                             ;
-; 21                                           ; 3                             ;
-; 22                                           ; 10                            ;
-; 23                                           ; 4                             ;
-; 24                                           ; 7                             ;
-; 25                                           ; 8                             ;
+; 20                                           ; 4                             ;
+; 21                                           ; 5                             ;
+; 22                                           ; 7                             ;
+; 23                                           ; 5                             ;
+; 24                                           ; 11                            ;
+; 25                                           ; 7                             ;
 ; 26                                           ; 6                             ;
 ; 27                                           ; 10                            ;
-; 28                                           ; 13                            ;
-; 29                                           ; 29                            ;
-; 30                                           ; 54                            ;
-; 31                                           ; 42                            ;
-; 32                                           ; 36                            ;
+; 28                                           ; 19                            ;
+; 29                                           ; 30                            ;
+; 30                                           ; 50                            ;
+; 31                                           ; 44                            ;
+; 32                                           ; 29                            ;
 +----------------------------------------------+-------------------------------+
 
 
 +---------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                         ;
 +-------------------------------------------------+-------------------------------+
-; Number of Signals Sourced Out  (Average = 6.91) ; Number of LABs  (Total = 256) ;
+; Number of Signals Sourced Out  (Average = 6.97) ; Number of LABs  (Total = 263) ;
 +-------------------------------------------------+-------------------------------+
 ; 0                                               ; 0                             ;
-; 1                                               ; 17                            ;
-; 2                                               ; 38                            ;
+; 1                                               ; 24                            ;
+; 2                                               ; 27                            ;
 ; 3                                               ; 19                            ;
-; 4                                               ; 17                            ;
-; 5                                               ; 7                             ;
-; 6                                               ; 9                             ;
+; 4                                               ; 18                            ;
+; 5                                               ; 11                            ;
+; 6                                               ; 10                            ;
 ; 7                                               ; 7                             ;
-; 8                                               ; 47                            ;
-; 9                                               ; 27                            ;
-; 10                                              ; 18                            ;
-; 11                                              ; 20                            ;
-; 12                                              ; 14                            ;
+; 8                                               ; 50                            ;
+; 9                                               ; 31                            ;
+; 10                                              ; 17                            ;
+; 11                                              ; 19                            ;
+; 12                                              ; 13                            ;
 ; 13                                              ; 4                             ;
-; 14                                              ; 7                             ;
-; 15                                              ; 3                             ;
-; 16                                              ; 2                             ;
+; 14                                              ; 3                             ;
+; 15                                              ; 6                             ;
+; 16                                              ; 4                             ;
 +-------------------------------------------------+-------------------------------+
 
 
 +------------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                          ;
 +----------------------------------------------+-------------------------------+
-; Number of Distinct Inputs  (Average = 14.52) ; Number of LABs  (Total = 256) ;
+; Number of Distinct Inputs  (Average = 14.54) ; Number of LABs  (Total = 263) ;
 +----------------------------------------------+-------------------------------+
 ; 0                                            ; 0                             ;
 ; 1                                            ; 1                             ;
 ; 2                                            ; 0                             ;
-; 3                                            ; 2                             ;
-; 4                                            ; 5                             ;
-; 5                                            ; 11                            ;
-; 6                                            ; 2                             ;
-; 7                                            ; 5                             ;
-; 8                                            ; 2                             ;
-; 9                                            ; 4                             ;
+; 3                                            ; 0                             ;
+; 4                                            ; 9                             ;
+; 5                                            ; 4                             ;
+; 6                                            ; 8                             ;
+; 7                                            ; 10                            ;
+; 8                                            ; 4                             ;
+; 9                                            ; 3                             ;
 ; 10                                           ; 4                             ;
-; 11                                           ; 6                             ;
-; 12                                           ; 45                            ;
-; 13                                           ; 25                            ;
-; 14                                           ; 32                            ;
-; 15                                           ; 24                            ;
-; 16                                           ; 26                            ;
-; 17                                           ; 14                            ;
-; 18                                           ; 15                            ;
-; 19                                           ; 1                             ;
-; 20                                           ; 2                             ;
-; 21                                           ; 4                             ;
-; 22                                           ; 1                             ;
+; 11                                           ; 7                             ;
+; 12                                           ; 46                            ;
+; 13                                           ; 30                            ;
+; 14                                           ; 21                            ;
+; 15                                           ; 22                            ;
+; 16                                           ; 24                            ;
+; 17                                           ; 17                            ;
+; 18                                           ; 8                             ;
+; 19                                           ; 8                             ;
+; 20                                           ; 6                             ;
+; 21                                           ; 3                             ;
+; 22                                           ; 2                             ;
 ; 23                                           ; 4                             ;
-; 24                                           ; 1                             ;
-; 25                                           ; 3                             ;
-; 26                                           ; 6                             ;
-; 27                                           ; 3                             ;
+; 24                                           ; 4                             ;
+; 25                                           ; 5                             ;
+; 26                                           ; 2                             ;
+; 27                                           ; 0                             ;
 ; 28                                           ; 0                             ;
 ; 29                                           ; 0                             ;
 ; 30                                           ; 0                             ;
 ; 31                                           ; 1                             ;
 ; 32                                           ; 0                             ;
 ; 33                                           ; 2                             ;
-; 34                                           ; 0                             ;
-; 35                                           ; 2                             ;
-; 36                                           ; 1                             ;
-; 37                                           ; 1                             ;
+; 34                                           ; 1                             ;
+; 35                                           ; 4                             ;
+; 36                                           ; 0                             ;
+; 37                                           ; 0                             ;
+; 38                                           ; 2                             ;
 +----------------------------------------------+-------------------------------+
 
 
@@ -1842,14 +1843,14 @@ Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:02
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:11
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:12
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 2% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 17% of the available device resources in the region that extends from location X21_Y11 to location X31_Y22
+    Info (170196): Router estimated peak interconnect usage is 18% of the available device resources in the region that extends from location X21_Y11 to location X31_Y22
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:10
-Info (11888): Total time spent on timing analysis during the Fitter is 4.98 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:11
+Info (11888): Total time spent on timing analysis during the Fitter is 5.77 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -2032,10 +2033,10 @@ Warning (169064): Following 80 pins have no output enable or a GND or VCC output
     Info (169065): Pin GPIO_1[0] has a permanently enabled output enable File: /home/labuser/Downloads/AVN_Generic_Firmware/scr/Analog_Input_Test_Code.vhd Line: 62
 Info (144001): Generated suppressed messages file /home/labuser/Downloads/AVN_Generic_Firmware/Quartus/output_files/Analog_Input_Test_Code.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 62 warnings
-    Info: Peak virtual memory: 764 megabytes
-    Info: Processing ended: Mon Nov 22 14:14:58 2021
-    Info: Elapsed time: 00:00:52
-    Info: Total CPU time (on all processors): 00:00:50
+    Info: Peak virtual memory: 770 megabytes
+    Info: Processing ended: Mon Nov 22 15:02:23 2021
+    Info: Elapsed time: 00:00:47
+    Info: Total CPU time (on all processors): 00:00:52
 
 
 +----------------------------+
